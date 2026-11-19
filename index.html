@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L-ARTS SMART FACILITIES · ระบบแจ้งซ่อมออนไลน์ มทร.กรุงเทพ</title>
+  <style>
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #f3f4f6; }
+    iframe { width: 100%; height: 100%; border: none; display: block; }
+  </style>
+</head>
+<body>
+  <iframe id="appFrame" src="" allow="camera; microphone; geolocation"></iframe>
+  <script>
+    // นำลิงก์ Web App ที่ลงท้ายด้วย /exec มาวางแทนที่ข้อความในเครื่องหมายคำพูดด้านล่าง
+    const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzVR5Rzoe05Re4eh6hBqvFUYBEnLz3aVeRs6HTlnhZJanWf7SMgHNARfilEsSq8dc7f/exec";
+    
+    // ส่งต่อรหัสติดตาม ?ticket=... จากลิงก์ GitHub เข้าไปในระบบอัตโนมัติ
+    const params = window.location.search;
+    document.getElementById("appFrame").src = GAS_WEB_APP_URL + params;
+  </script>
+</body>
+</html>
